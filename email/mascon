@@ -1,0 +1,15 @@
+# IT has some time limitations it worls though 
+
+from twilio.rest import Client
+
+account_sid = 'ACf34751f83fea0a8b52f08f97d429f7c5'
+auth_token = '574d210e79a3dbe84d99b087e55354f1'
+client = Client(account_sid, auth_token)
+
+message = client.messages.create(
+  from_='+12563056025',
+  to='+919324526912' ,
+  body="hello from shrishti chu^^"
+)
+
+print(message.sid)
