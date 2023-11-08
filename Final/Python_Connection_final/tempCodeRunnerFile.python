@@ -1,0 +1,42 @@
+from PIL import Image, ImageTk
+import tkinter as tk
+from tkinter import ttk
+
+root = tk.Tk()
+root.title("Delivery System")
+
+home_frame = ttk.Frame(root)
+home_frame.pack(fill="both", expand=True)
+
+# Create a label with text
+home_label = ttk.Label(home_frame, text="""Welcome to Our Delivery System!
+
+This system is designed to make deliveries between two locations on the map easier and more efficient. You can use our user-friendly interface to plan and track your deliveries.
+
+Key Features:
+- Interactive Map: Visualize your delivery route on an interactive map.
+- Real-Time Tracking: Monitor the progress of your deliveries in real-time.
+- Fast and Reliable: We ensure speedy and secure deliveries every time.
+- Customization: Tailor your delivery preferences to meet your specific needs.
+
+Get started by selecting your delivery points and experience hassle-free deliveries with us!
+
+For any questions or assistance, please contact our customer support.
+
+Thank you for choosing our Delivery System!
+""", font=("Helvetica", 16), background='#011533', foreground='white', justify="center")
+home_label.pack(padx=20, pady=20)
+
+# Load the image
+image = Image.open("Detailed_map.png")  # Replace with your image path
+photo = ImageTk.PhotoImage(image)
+
+# Create a frame for the image
+image_frame = ttk.Frame(home_frame, background='#011533')
+image_frame.pack(padx=10, pady=10)
+
+# Create a label to display the image
+image_label = ttk.Label(image_frame, image=photo)
+image_label.pack()
+
+root.mainloop()
